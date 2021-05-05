@@ -1,0 +1,40 @@
+*{
+    margin:0px;
+    padding:0px; 
+    box-sizing: border-box;
+}
+
+html,body{
+    min-height:100vh;
+    position:absolute;
+}
+.Main{
+    position:fixed;
+    display: flex;
+    padding:0;
+    margin:0;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background: url(../resources/main_bg.png)no-repeat;
+    background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    .refresh{
+        height: 20px;
+        background: none;
+    }
+    .wrapper{
+        position: fixed;
+        display: flex;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 85%;
+        width: 70%;
+        font-family: 'Comfortaa', cursive;
+        @import 'side_container';
+        @import 'main_container';  
+    }
+}

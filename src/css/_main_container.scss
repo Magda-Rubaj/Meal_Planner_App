@@ -1,0 +1,13 @@
+.main_container{
+    background: rgb(238, 238, 245);
+    border-radius: 0 8px 8px 0;
+    width: 78%;
+    @import 'profile';
+    @import 'meals';
+    @import 'day';
+    @import 'calendar';  
+    h2{
+            margin-bottom: 15px;
+            font-size: 30px;
+    }
+}

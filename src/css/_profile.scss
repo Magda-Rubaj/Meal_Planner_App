@@ -1,0 +1,52 @@
+.profile_wrapper{
+    margin-left: 40px;
+    margin-top: 15px;
+    .user_info{
+        display: flex;
+        .info_left{
+            margin-top: 40px;
+            .info_block{
+                margin-top: 25px;
+                h5{
+                    font-size: 18px;
+                }
+                h6{
+                    font-size: 16px;
+                    margin-top: 8px;
+                    background: linear-gradient(rgb(32, 187, 214), rgb(4, 189, 167));
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                .change_button{ 
+                    background: url(../resources/edit.svg) no-repeat; 
+                    border: none;
+                    font-family: 'Comfortaa', cursive;
+                    font-size: 11px;
+                    padding-left: 15px;
+                    border-radius: 5px;
+                    margin-top: 8px;
+                    position: relative;
+                }
+            }
+        }
+    }
+    .info_right{
+        margin-top: 100px;
+        margin-left: 20%;
+        img{
+            border-radius: 5px;
+        }
+        .avatar_change{
+            input[type=submit]{
+                margin-top: 10px;
+                border: none;
+                background: linear-gradient(rgb(32, 187, 214), rgb(4, 189, 167));
+                border-radius: 4px;
+                font-family: 'Comfortaa', cursive;
+                padding: 5px;
+                color: white;
+            }
+        }
+    }
+}

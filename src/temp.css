@@ -1,0 +1,48 @@
+html,body{
+  min-height:100vh;
+  position:absolute;
+}
+body{
+  background: url(./resources/main_bg.png) no-repeat;
+  background-size: 100vw;
+  background-attachment: fixed;
+}
+.App{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+#wrapper{
+  display: flex;
+  margin-top: 75px;
+  margin-left: 150px;
+}
+#side_container{
+  display: block;
+  width: 310px;
+  height: 600px;
+  background: rgb(240, 240, 240);
+  box-shadow:0 0 30px rgba(134, 134, 134, 0.6); 
+  text-align: center;
+  border-radius: 8px 0 0 8px;
+}
+#nav_wrapper{
+  margin-top: 300px;
+}
+#nav_wrapper a{
+  margin-top: 5%;
+  display: block;
+}
+#main_container{
+  display: block;
+  background: rgb(253, 253, 253);
+  height: 600px;
+  width:930px;
+  border-radius: 0 8px 8px 0;
+}
+#profile_wrapper{
+  margin-left: 5%;
+}
+#informations{
+  margin-top: 80px;
+}

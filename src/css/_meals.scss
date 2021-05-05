@@ -1,0 +1,56 @@
+.meals_wrapper{
+    margin-top: 15px;
+    width: 100%;
+    h2{
+        margin-left: 40px;
+    }
+    .combined{
+        align-items: center;
+        text-align: center;
+        .meal_container{
+            width: 80%;
+            display: grid;
+            margin: 0 auto;
+            margin-top: 40px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            text-align: center;
+            justify-items: center;
+            figure{
+                margin-top: 30px;
+                display: block;
+                width: 85px; 
+                img{
+                    border-radius: 6px;
+                    box-shadow: 0 0 5px gray;
+                }
+            }
+            button{
+                margin-top: 30px;
+                height: 85px;
+                width: 85px;
+                background: url(../resources/add.svg) no-repeat;
+                background-color: rgb(32, 187, 214);border: none;
+                border-radius: 6px;
+            }
+        }
+        .pagination{
+            margin-top: 5vh;
+            label{
+                padding: 5px;
+                border: 0.5px solid gray;
+                margin-left: 2px;
+                margin-right: 2px;
+                padding-left: 10px;
+                padding-right: 10px;
+                background: white;
+            }
+            button{
+                background: rgb(48, 52, 61);
+                border: none;
+                padding: 5px; 
+                border-radius: 3px;  
+                color: white;   
+            }
+        }
+    }
+}

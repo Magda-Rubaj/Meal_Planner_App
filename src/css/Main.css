@@ -1,0 +1,265 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box; }
+
+html, body {
+  min-height: 100vh;
+  position: absolute; }
+
+.Main {
+  position: fixed;
+  display: flex;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../resources/main_bg.png) no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover; }
+  .Main .refresh {
+    height: 20px;
+    background: none; }
+  .Main .wrapper {
+    position: fixed;
+    display: flex;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 85%;
+    width: 70%;
+    font-family: 'Comfortaa', cursive; }
+    .Main .wrapper .side_container {
+      width: 22%;
+      z-index: 10;
+      background: #30343d;
+      border-radius: 8px 0 0 8px;
+      box-shadow: 5px 1px 5px 0px rgba(100, 100, 100, 0.733); }
+      .Main .wrapper .side_container .info_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+        height: 37%;
+        width: 100%;
+        border-bottom: 0.7px solid #777373;
+        padding-bottom: 5px; }
+        .Main .wrapper .side_container .info_container img {
+          border-radius: 45px; }
+        .Main .wrapper .side_container .info_container .weight_wrapper {
+          margin-top: 10px;
+          width: 80%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center; }
+          .Main .wrapper .side_container .info_container .weight_wrapper h5 {
+            padding-left: 30px;
+            padding-right: 30px; }
+        .Main .wrapper .side_container .info_container .info_item {
+          color: white;
+          display: block;
+          margin-top: 10px; }
+      .Main .wrapper .side_container .nav_wrapper {
+        margin-top: 25px;
+        font-size: 15px; }
+        .Main .wrapper .side_container .nav_wrapper .nav_item_wrapper {
+          display: block;
+          padding-left: 20%;
+          padding-top: 14px;
+          padding-bottom: 14px;
+          min-width: 100%; }
+          .Main .wrapper .side_container .nav_wrapper .nav_item_wrapper .navitem {
+            color: #f7f7f7;
+            text-decoration: none;
+            font-size: 15px;
+            background: none;
+            border: none;
+            padding-left: 20px; }
+        .Main .wrapper .side_container .nav_wrapper .nav_item_wrapper:hover {
+          background: #53545e; }
+        .Main .wrapper .side_container .nav_wrapper #home {
+          background: url(../resources/home.svg) no-repeat; }
+        .Main .wrapper .side_container .nav_wrapper #profile {
+          background: url(../resources/profile.svg) no-repeat; }
+        .Main .wrapper .side_container .nav_wrapper #saved {
+          background: url(../resources/meal.svg) no-repeat; }
+        .Main .wrapper .side_container .nav_wrapper #calendar {
+          background: url(../resources/calendar.svg) no-repeat; }
+        .Main .wrapper .side_container .nav_wrapper #logout {
+          background: url(../resources/logout.svg) no-repeat;
+          font-family: 'Comfortaa', cursive; }
+    .Main .wrapper .main_container {
+      background: #eeeef5;
+      border-radius: 0 8px 8px 0;
+      width: 78%; }
+      .Main .wrapper .main_container .profile_wrapper {
+        margin-left: 40px;
+        margin-top: 15px; }
+        .Main .wrapper .main_container .profile_wrapper .user_info {
+          display: flex; }
+          .Main .wrapper .main_container .profile_wrapper .user_info .info_left {
+            margin-top: 40px; }
+            .Main .wrapper .main_container .profile_wrapper .user_info .info_left .info_block {
+              margin-top: 25px; }
+              .Main .wrapper .main_container .profile_wrapper .user_info .info_left .info_block h5 {
+                font-size: 18px; }
+              .Main .wrapper .main_container .profile_wrapper .user_info .info_left .info_block h6 {
+                font-size: 16px;
+                margin-top: 8px;
+                background: linear-gradient(#20bbd6, #04bda7);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent; }
+              .Main .wrapper .main_container .profile_wrapper .user_info .info_left .info_block .change_button {
+                background: url(../resources/edit.svg) no-repeat;
+                border: none;
+                font-family: 'Comfortaa', cursive;
+                font-size: 11px;
+                padding-left: 15px;
+                border-radius: 5px;
+                margin-top: 8px;
+                position: relative; }
+        .Main .wrapper .main_container .profile_wrapper .info_right {
+          margin-top: 100px;
+          margin-left: 20%; }
+          .Main .wrapper .main_container .profile_wrapper .info_right img {
+            border-radius: 5px; }
+          .Main .wrapper .main_container .profile_wrapper .info_right .avatar_change input[type=submit] {
+            margin-top: 10px;
+            border: none;
+            background: linear-gradient(#20bbd6, #04bda7);
+            border-radius: 4px;
+            font-family: 'Comfortaa', cursive;
+            padding: 5px;
+            color: white; }
+      .Main .wrapper .main_container .meals_wrapper {
+        margin-top: 15px;
+        width: 100%; }
+        .Main .wrapper .main_container .meals_wrapper h2 {
+          margin-left: 40px; }
+        .Main .wrapper .main_container .meals_wrapper .combined {
+          align-items: center;
+          text-align: center; }
+          .Main .wrapper .main_container .meals_wrapper .combined .meal_container {
+            width: 80%;
+            display: grid;
+            margin: 0 auto;
+            margin-top: 40px;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            text-align: center;
+            justify-items: center; }
+            .Main .wrapper .main_container .meals_wrapper .combined .meal_container figure {
+              margin-top: 30px;
+              display: block;
+              width: 85px; }
+              .Main .wrapper .main_container .meals_wrapper .combined .meal_container figure img {
+                border-radius: 6px;
+                box-shadow: 0 0 5px gray; }
+            .Main .wrapper .main_container .meals_wrapper .combined .meal_container button {
+              margin-top: 30px;
+              height: 85px;
+              width: 85px;
+              background: url(../resources/add.svg) no-repeat;
+              background-color: #20bbd6;
+              border: none;
+              border-radius: 6px; }
+          .Main .wrapper .main_container .meals_wrapper .combined .pagination {
+            margin-top: 5vh; }
+            .Main .wrapper .main_container .meals_wrapper .combined .pagination label {
+              padding: 5px;
+              border: 0.5px solid gray;
+              margin-left: 2px;
+              margin-right: 2px;
+              padding-left: 10px;
+              padding-right: 10px;
+              background: white; }
+            .Main .wrapper .main_container .meals_wrapper .combined .pagination button {
+              background: #30343d;
+              border: none;
+              padding: 5px;
+              border-radius: 3px;
+              color: white; }
+      .Main .wrapper .main_container .day_wrapper {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .Main .wrapper .main_container .day_wrapper .day_view {
+          height: 80%;
+          width: 80%;
+          display: inline-flex; }
+          .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view, .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view {
+            position: relative;
+            padding-left: 6%;
+            display: flex;
+            flex-direction: column;
+            width: 45%;
+            height: 100%;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray; }
+            .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view h4, .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view h4 {
+              margin-top: 4%;
+              margin-bottom: 10%;
+              font-size: 20px; }
+            .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view .bottom_info, .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view .bottom_info {
+              position: absolute;
+              width: 90%;
+              border-top: 0.5px solid gray;
+              bottom: 2%;
+              left: 50%;
+              transform: translate(-50%);
+              font-size: 12px; }
+            .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view .item, .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view .item {
+              display: inline; }
+            .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view p, .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view p {
+              margin-top: 5%; }
+          .Main .wrapper .main_container .day_wrapper .day_view .meal_day_view {
+            margin-right: 7%; }
+          .Main .wrapper .main_container .day_wrapper .day_view .shopping_day_view {
+            margin-left: 7%; }
+      .Main .wrapper .main_container .calendar_wrapper {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-items: center;
+        height: 100%;
+        width: 100%; }
+        .Main .wrapper .main_container .calendar_wrapper .react-calendar {
+          width: 90%;
+          height: 80%;
+          background: white;
+          border: 1px solid #a0a096;
+          box-shadow: 0 0 15px gray;
+          margin: auto; }
+          .Main .wrapper .main_container .calendar_wrapper .react-calendar .react-calendar button {
+            background: none;
+            border: none; }
+          .Main .wrapper .main_container .calendar_wrapper .react-calendar .react-calendar__tile {
+            max-width: 100%;
+            height: 10vh;
+            text-align: center;
+            padding: 0.75em 0.5em;
+            background: none;
+            border: none; }
+          .Main .wrapper .main_container .calendar_wrapper .react-calendar .react-calendar__navigation {
+            height: 44px;
+            margin-bottom: 1em;
+            background: #0aa57e;
+            border: none; }
+          .Main .wrapper .main_container .calendar_wrapper .react-calendar .react-calendar__navigation button {
+            min-width: 44px;
+            background: none;
+            border: none; }
+          .Main .wrapper .main_container .calendar_wrapper .react-calendar .react-calendar__tile--now {
+            background: #0aa57e; }
+      .Main .wrapper .main_container h2 {
+        margin-bottom: 15px;
+        font-size: 30px; }
+
+/*# sourceMappingURL=Main.css.map */
