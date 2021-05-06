@@ -22,7 +22,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 Under development api server needs to be active in order to run app properly.
-You can get api here: https://github.com/Magda-Rubaj/Meal_Planner_App
+You can get api here: https://github.com/Magda-Rubaj/Meal_Planner_App_API
 
 ### External Packages
 
