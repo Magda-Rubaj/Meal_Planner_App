@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 * sass
 * npm 
 
-## Running the app
+### Running the app
 
 To run this project you need node js installed on your computer.
 In the project directory, you can run:
