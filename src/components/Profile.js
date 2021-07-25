@@ -3,7 +3,7 @@ import UserApi from '../api/UserApi.js';
 import UsernameChange from "./UsernameChange";
 import CurrWeightChange from "./CurrWeightChange";
 import DesWeightChange from "./DesWeightChange";
-import AvatarChange from "./AvatarChange";
+import AvatarChange from "./AvatarChange.jsx";
 
 
 class Profile extends Component {

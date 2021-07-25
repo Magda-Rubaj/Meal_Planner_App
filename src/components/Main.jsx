@@ -6,9 +6,9 @@ import {
 } from "react-router-dom";
 import Profile from "./Profile";
 import Products from "./Products";
-import CalendarComp from './CalendarComp';
-import CalendarDay from './CalendarDay';
-import Nav from './Nav';
+import CalendarComp from './CalendarComp.jsx';
+import CalendarDay from './CalendarDay.jsx';
+import Nav from './Nav.jsx';
 import '../css/Main.css';
 
 import userService from '../api/services/user';
@@ -58,7 +58,7 @@ const Main = () => {
     setUser(old => {
       return {
         ...old, ...{
-            date: day + month + year
+          date: day + month + year
         }
       }
     })
