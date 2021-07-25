@@ -7,6 +7,10 @@ const UserService = {
   },
   postUser: async(payload) => {
     return await request.post('users', payload);
+  },
+  patchUser: async(payload) => {
+    const id = localStorage.getItem('user_id');
+    return await request.patch(`users/${id}`);
   }
 }
 
