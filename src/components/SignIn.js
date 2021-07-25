@@ -10,23 +10,17 @@ const SignIn = () => {
 		success: true
 	})
 
-	const onUserNameChange = e => {
+	const handleInputChange = e => {
+    const target = e.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 		setSignIn(old => {
 			return {
 				...old,
-				username: e.target.value
+				[name]: value
 			}
 		})
-	}
-
-	const onPasswordChange = e => {
-		setSignIn(old => {
-			return {
-				...old,
-				password: e.target.value
-			}
-		})
-	}
+  }
 
 	const login = async(e) => {
 		e.preventDefault();
@@ -70,14 +64,16 @@ const SignIn = () => {
 					<h5>Username</h5>
 					<input 
 							type="username"
+							name="username"
 							value={signIn.username}
-							onChange={onUserNameChange}
+							onChange={handleInputChange}
 					/><br/>
 					<h5>Password</h5>
 					<input 
 							type="password"
+							name="password"
 							value={signIn.password}
-							onChange={onPasswordChange}
+							onChange={handleInputChange}
 					/><br/>
 					<input id="login_button" type="submit" value="Login"/><br/>
 					{!signIn.success && <p>Incorrect username or password</p>}

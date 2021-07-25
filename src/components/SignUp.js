@@ -31,7 +31,6 @@ const SignUp = () => {
 				currentWeight: signUp.currentWeight,
 				desiredWeight: signUp.desiredWeight,
 			})
-		console.log(user);
 		await userService.postUser(user);      
 	}
 
