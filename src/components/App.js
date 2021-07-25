@@ -2,10 +2,9 @@ import { useEffect, useState } from 'react';
 import Main from "./Main";
 import Guest from "./Guest";
 
-import useService from '../api/services/user';
+import userService from '../api/services/user';
 
 const App = () => {
-
   const [app, setApp] = useState({
     mounted: false,
     logged: false
@@ -13,7 +12,7 @@ const App = () => {
 
   useEffect(() => {
     const fetch = async() => {
-      const fetchedUser = await useService.getUser();
+      const fetchedUser = await userService.getUser();
       if(fetchedUser){
         setApp(old => {
           return {
@@ -42,16 +41,13 @@ const App = () => {
   }
 
   if(app.mounted) {
-    if(app.logged === true){
+    if(app.logged)
       return <Main/>
-    }
-    else {
+    else
       return <Guest handleLogin={login}/>
-    }
   }
-  else {
+  else
     return null;
-  }
 }
 
 export default App;

@@ -1,79 +1,89 @@
-import React, { Component } from 'react';
-import TokenApi from '../api/TokenApi.js';
+import { useState } from 'react';
 import jwt from 'jwt-decode'
+import tokenService from '../api/services/token';
 
-class SignIn  extends Component{
-    constructor(){
-        super();
-        this.state = {
-            logged: false,
-            username: "",
-            password: "",
-            succesfull: true
-        }
-    }
-    onUsernameChange = e => {
-        this.setState({
-            username: e.target.value
-          });
-    }
-    onPasswordChange = e => {
-        this.setState({
-            password: e.target.value
-          });
-    }
-    login = e =>{
-        e.preventDefault();
-        this.setState({
-            succesfull: true
-        });
-        const user = JSON.stringify({
-            username: this.state.username,
-            password: this.state.password
-        })
-        TokenApi.token.obtain(user)
-            .then(res => {
-                if(res !== null){
-                    localStorage.setItem('access_token', res.access);
-                    localStorage.setItem('refresh_token', res.refresh);
-                    const decoded = jwt(res.access);
-                    localStorage.setItem('user_id', decoded.user_id);
-                    this.setState({
-                        logged: true
-                    });
-                    this.props.handleChange(true);
-                }
-                else{
-                    this.setState({
-                        succesfull: false
-                    });
-                }
-            })
-    }
-    render() {
-        return (
-        <div className="Login">
-            <h3>Login</h3>
-            <form onSubmit={this.login}> 
-                <h5>Username</h5>
-                <input 
-                    type="username"
-                    value={this.state.username}
-                    onChange={this.onUsernameChange}
-                /><br/>
-                <h5>Password</h5>
-                <input 
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.onPasswordChange}
-                /><br/>
-                <input id="login_button" type="submit" value="Login"/><br/>
-                
-                {!this.state.succesfull && <p>Incorrect username or password</p>}
- 
-            </form>
-        </div>
-        );
-    }
-}
+const SignIn = () => {
+  const [signIn, setSignIn] = useState({
+		logged: false,
+		username: '',
+		password: '',
+		success: true
+	})
+
+	const onUserNameChange = e => {
+		setSignIn(old => {
+			return {
+				...old,
+				username: e.target.value
+			}
+		})
+	}
+
+	const onPasswordChange = e => {
+		setSignIn(old => {
+			return {
+				...old,
+				password: e.target.value
+			}
+		})
+	}
+
+	const login = async(e) => {
+		e.preventDefault();
+		setSignIn(old => {
+			return {
+				...old,
+				success: true
+			}
+		})
+		const user = JSON.stringify({
+				username: signIn.username,
+				password: signIn.password
+		})
+		const res = await tokenService.obtain(user);
+		if(res) {
+			localStorage.setItem('access_token', res.access);
+			localStorage.setItem('refresh_token', res.refresh);
+			const decoded = jwt(res.access);
+			localStorage.setItem('user_id', decoded.user_id);
+			setSignIn(old => {
+				return {
+					...old,
+					logged: true
+				}
+			})
+			this.props.handleChange(true);
+		}
+		else {
+			setSignIn(old => {
+				return {
+					...old,
+					success: false
+				}
+			})
+		}
+	}
+		return (
+		<div className="Login">
+			<h3>Login</h3>
+			<form onSubmit={login}> 
+					<h5>Username</h5>
+					<input 
+							type="username"
+							value={signIn.username}
+							onChange={onUserNameChange}
+					/><br/>
+					<h5>Password</h5>
+					<input 
+							type="password"
+							value={signIn.password}
+							onChange={onPasswordChange}
+					/><br/>
+					<input id="login_button" type="submit" value="Login"/><br/>
+					{!signIn.success && <p>Incorrect username or password</p>}
+				</form>
+		</div>
+	);
+};
+
 export default SignIn;
