@@ -1,48 +1,57 @@
-import React, { Component } from 'react';
+import { useEffect, useState } from 'react';
 import Main from "./Main";
 import Guest from "./Guest";
-import UserApi from '../api/UserApi.js';
-class App extends Component {
-  constructor(){
-    super();
-    this.state = {
-      mounted: false,
-      logged: false
-    };
-  }
-  componentDidMount(){
-    UserApi.user.getUser()
-      .then(res => {
-        if(res !== null){
-          this.setState({
+
+import useService from '../api/services/user';
+
+const App = () => {
+
+  const [app, setApp] = useState({
+    mounted: false,
+    logged: false
+  });
+
+  useEffect(() => {
+    const fetch = async() => {
+      const fetchedUser = await useService.getUser();
+      if(fetchedUser){
+        setApp(old => {
+          return {
+            ...old,
             logged: true
-          })
-        }
-        this.setState({
-          mounted: true
+          }
         })
-      })
-  }
-  login = callback =>{
-    this.setState({
-      logged: callback
+      }
+    }
+    fetch();
+    setApp(old => {
+      return {
+        ...old,
+        mounted: true
+      }
     })
-    console.log(callback);
+  }, [])
+
+  const login = callback =>{
+    setApp(old => {
+      return {
+        ...old, 
+        logged: callback
+      }
+    });
   }
-  render(){
-    if(this.state.mounted){
-      if(this.state.logged === true){
-        return <Main/>
-      }
-      else{
-        return <Guest handleLogin={this.login}/>
-      }
+
+  if(app.mounted) {
+    if(app.logged === true){
+      return <Main/>
     }
-    else{
-      return null;
+    else {
+      return <Guest handleLogin={login}/>
     }
+  }
+  else {
+    return null;
   }
 }
 
 export default App;
-
