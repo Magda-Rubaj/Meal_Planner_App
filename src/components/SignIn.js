@@ -37,8 +37,8 @@ const SignIn = () => {
 			}
 		})
 		const user = JSON.stringify({
-				username: signIn.username,
-				password: signIn.password
+			username: signIn.username,
+			password: signIn.password
 		})
 		const res = await tokenService.obtain(user);
 		if(res) {
@@ -63,7 +63,7 @@ const SignIn = () => {
 			})
 		}
 	}
-		return (
+	return (
 		<div className="Login">
 			<h3>Login</h3>
 			<form onSubmit={login}> 
