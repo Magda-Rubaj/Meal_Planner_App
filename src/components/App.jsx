@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import Main from "./Main";
-import Guest from "./Guest";
+import Main from "./Main.jsx";
+import Guest from "./Guest.jsx";
 
 import userService from '../api/services/user';
 

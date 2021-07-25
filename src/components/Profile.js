@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import UserApi from '../api/UserApi.js';
-import UsernameChange from "./UsernameChange";
+import UsernameChange from "./UsernameChange.jsx";
 import CurrWeightChange from "./CurrWeightChange";
-import DesWeightChange from "./DesWeightChange";
+import DesWeightChange from "./DesWeightChange.jsx";
 import AvatarChange from "./AvatarChange.jsx";
 
+
+import userService from '../api/services/user'
 
 class Profile extends Component {
 
@@ -20,7 +21,7 @@ class Profile extends Component {
         }
 
         componentDidMount() {
-          UserApi.user.getUser()
+          userService.user.getUser()
           .then(user => {
               this.setState({
                 username: user.username,
@@ -35,7 +36,7 @@ class Profile extends Component {
         }
 
         fetchToServer = (body, request, property, value) => {
-          UserApi.user.patchUser(request)
+          userService.patchUser(request)
           .then(res =>{
             console.log(res);
             if(res.status === 200){
