@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UsernameChange from "./UsernameChange.jsx";
-import CurrWeightChange from "./CurrWeightChange";
+import CurrWeightChange from "./CurrWeightChange.jsx";
 import DesWeightChange from "./DesWeightChange.jsx";
 import AvatarChange from "./AvatarChange.jsx";
 
