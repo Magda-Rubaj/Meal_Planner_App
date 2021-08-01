@@ -1,6 +1,6 @@
 import React from 'react';
 import DailyMeals from "./DailyMeals";
-import ShoppingList from "./ShoppingList";
+import ShoppingList from "./ShoppingList.jsx";
 
 const CalendarDay = (props) => {
 	return (
